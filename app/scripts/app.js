@@ -148,6 +148,20 @@
             });
         });
 
+        $(".inventory .data").on("click", "a.levelupAction", function () {
+            var parent = $(this).parent();
+            var id = parent.data().id;
+            var idx = global.map.pokemonList.findIndex(p => p.id == id);
+            var selected = global.map.pokemonList[idx];
+            var name = inventoryService.getPokemonName(selected.pokemonId);
+            ga("send", "event", "levelup", name);
+            $(this).find("img").attr('src', `./assets/img/levelup.png`);
+            wssend({
+                Command: "LevelUpPokemon",
+                PokemonId: id
+            });
+        });
+
         $(".inventory .data").on("click", "a.dropItemAction", function() {
             var parent = $(this).parent();
             var itemId = parent.data().id;

@@ -305,7 +305,8 @@ Map.prototype.displayPokemonList = function(all, sortBy, eggs) {
                 <div class="transfer" data-id='${elt.id}'>
                     <a title='(Un)Favorite' href="#" class="favoriteAction"><img src="./assets/img/favorite_${fav}.png" /></a>
                     <a title='Transfer' href="#" class="transferAction ${transferClass}"><img src="./assets/img/recyclebin.png" /></a>
-                    <a title='Evolve' href="#" class="evolveAction ${evolveStyle}"><img src="./assets/img/evolve.png" /></a>
+                    <a title='Evolve' href="#" class ="evolveAction ${evolveStyle}"><img src="./assets/img/evolve.png" /></a>
+                    <a title='LevelUp' href="#" class ="levelupAction"><img src="./assets/img/levelup.png" /></a>
                 </div>
                 <span class="imgspan ${evolveClass}"><img src="./assets/pokemon/${elt.pokemonId}.png" /></span>
                 <span class="name">${elt.name} lvl <strong>${elt.lvl}</strong></span>
