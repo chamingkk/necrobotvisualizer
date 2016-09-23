@@ -92,7 +92,7 @@ function listenToWebSocket() {
             });
             global.map.addPokestops(forts);
         } else if (command.indexOf("SnipeModeEvent") >= 0) {
-            if (msg.Active) console.log("Sniper Mode");
+            //if (msg.Active) console.log("Sniper Mode");
             global.snipping = msg.Active;
         } else if (command.indexOf("PokemonListEvent") >= 0) {
             var pkm = Array.from(msg.PokemonList.$values, p => {
@@ -110,6 +110,8 @@ function listenToWebSocket() {
                     candyToEvolve: pkmInfo ? pkmInfo.CandyToEvolve : 0,
                     favorite: p.Item1.Favorite != 0,
                     lvl: inventory.getPokemonLevel(p.Item1),
+                    move1: inventory.getMove(p.Item1.Move1),
+                    move2: inventory.getMove(p.Item1.Move2)
                 }
             });
             global.map.displayPokemonList(pkm);

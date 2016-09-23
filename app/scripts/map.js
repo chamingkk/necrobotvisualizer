@@ -308,8 +308,10 @@ Map.prototype.displayPokemonList = function(all, sortBy, eggs) {
                     <a title='Evolve' href="#" class="evolveAction ${evolveStyle}"><img src="./assets/img/evolve.png" /></a>
                 </div>
                 <span class="imgspan ${evolveClass}"><img src="./assets/pokemon/${elt.pokemonId}.png" /></span>
-                <span class="name">${elt.name} lvl ${elt.lvl}</span>
+                <span class="name">${elt.name} lvl <strong>${elt.lvl}</strong></span>
                 <span class="info">CP: <strong>${elt.cp}</strong> IV: <strong>${elt.iv}%</strong></span>
+                <span class="info">Move1: <strong>${elt.move1}</strong></span>
+                <span class="info">Move2: <strong>${elt.move2}</strong></span>
                 <span class="info">Candy: ${elt.candy}<span ${candyStyle}>/${elt.candyToEvolve}</span></span>
             </div>
         `);

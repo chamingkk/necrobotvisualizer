@@ -1,6 +1,7 @@
 (function() {
     var allPokemon = null;
     var allItems = null;
+    var allMoves = null;
 
     function load(locale) {
         locale = locale || "en";
@@ -13,6 +14,11 @@
             url: `assets/json/inventory.${locale}.json`,
             async: false,
             success: (result) => { allItems = (typeof result == "string" ? JSON.parse(result) : result); }
+        });
+        $.ajax({
+            url: `assets/json/pokemon-move.json`,
+            async: false,
+            success: (result) => { allMoves = (typeof result == "string" ? JSON.parse(result) : result); }
         });
     }
 
@@ -28,6 +34,10 @@
 
     service.getItemName = function(id) {
         return allItems[id];
+    }
+
+    service.getMove = function (id) {
+        return allMoves[id];
     }
 
     const lvlMap = {93:1, 94:1, 135:1.5, 166:2, 192:2.5, 215:3, 236: 3.5, 255: 4, 273: 4.5, 290:5,
